@@ -1,0 +1,39 @@
+create database groceries;
+
+
+CREATE TABLE groceries.orders (
+order_id int ,
+customer_id int,
+prod_id int,
+prod_qty numeric(22,7),
+customer_name varchar(200),
+customer_address varchar(200),
+customer_mob bigint
+);
+
+
+
+CREATE TABLE groceries.products (
+prod_id int primary key ,
+prod_name varchar(100),
+prod_desc varchar(200),
+prod_category varchar(200),
+prod_brand varchar(200),
+prod_price numeric(22,7),
+prod_qty numeric(22,7)
+);
+
+
+CREATE TABLE groceries.inventory (
+prod_id int primary key,
+availble_stock numeric(22,7)
+);
+
+
+
+create table groceries.cart(
+prod_id int ,
+session_id varchar(100),
+prod_name varchar(200),
+prod_price numeric(22,7)
+);
